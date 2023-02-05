@@ -1,21 +1,34 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="home">
+    <h1>test</h1>
+    <p>{{number}}</p>
+    <button @click="number++">+</button>
+    <button @click="number--">-</button>
+    <Msg :msg="text"></Msg>
+  </div>
+
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
+import Msg from '@/components/MsgComp'
 export default {
   name: 'App',
-  components: {
-    HelloWorld
-  }
+
+  data() {
+    return {
+      number:0,
+      text: ''
+    }
+  },
+
+  components: {Msg},
+
 }
 </script>
 
 <style>
-#app {
+#widget {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
